@@ -1,30 +1,31 @@
 #!/bin/bash
 
 # default to false in case it is not set
-DEPLOY_CONTRACTS="${DEPLOY_CONTRACTS:-false}"
-
+#DEPLOY_CONTRACTS="${DEPLOY_CONTRACTS:-false}"
+DEPLOY_CONTRACTS="true"
 echo "deploy contracts is ${DEPLOY_CONTRACTS}"
 
 if [ "${DEPLOY_CONTRACTS}" = "true" ]
 then
     #we have to sleep until ganache is ready
     sleep ${SLEEP_FOR_GANACHE}
-    cp hardhat.config.barge.js hardhat.config.js
+    #cp hardhat.config.barge.js hardhat.config.js
     # remove ready flag if we deploy contracts
     rm -f /ocean-contracts/artifacts/ready
 
-    export NETWORK="${NETWORK_NAME:-barge}"
+    #export NETWORK="${NETWORK_NAME:-barge}"
+    export NETWORK="rinkeby"
     npx hardhat compile
     #remove unneeded debug artifacts
-    find /ocean-contracts/artifacts/* -name "*.dbg.json" -type f -delete
+    find ~/ocean-contracts/artifacts/* -name "*.dbg.json" -type f -delete
     #copy address.json
-    if [ -e /ocean-contracts/addresses/address.json ]
-        then cp -u /ocean-contracts/addresses/address.json /ocean-contracts/artifacts/
+    if [ -e ~/ocean-contracts/addresses/address.json ]
+        then cp -u ~/ocean-contracts/addresses/address.json ~/ocean-contracts/artifacts/
     fi
-    node scripts/deploy-contracts.js
+    node deploy-contracts.js
 
     # set flag to indicate contracts are ready
-    touch /ocean-contracts/artifacts/ready
+    touch ~/ocean-contracts/artifacts/ready
 fi
 
 # Fix file permissions
@@ -32,6 +33,6 @@ EXECUTION_UID=$(id -u)
 EXECUTION_GID=$(id -g)
 USER_ID=${LOCAL_USER_ID:-$EXECUTION_UID}
 GROUP_ID=${LOCAL_GROUP_ID:-$EXECUTION_GID}
-chown -R $USER_ID:$GROUP_ID /ocean-contracts/artifacts
+chown -R $USER_ID:$GROUP_ID ~/ocean-contracts/artifacts
 
 tail -f /dev/null

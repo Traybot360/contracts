@@ -1,0 +1,21 @@
+{
+  "rinkeby": {
+    "chainId": 4,
+    "Ocean": "0xe280d411BBbDAd50eE653D2Cc0aC610285BDB896",
+    "OPFCommunityFeeCollector": "0x8F2a77D9d232E5b72491Bb38940Ac21ea427a0c0",
+    "startBlock": 10973744,
+    "poolTemplate": "0xdDB4c6980a1014Ee22AAeDdc8db2B5CD2a84b6c0",
+    "Router": "0xeb4f4e39eeB35F95f4da52947F7C8bCdF3bFFfE9",
+    "FixedPrice": "0x7C5B4Ca2eF2909d245399AF2475fE3F45541396C",
+    "Staking": "0xEd33d1E94b31D6B1C728fb711ed8fac2E1955e59",
+    "ERC20Template": {
+      "1": "0x3A9C0fac5977470141d521d36C8cEcF6e4edA526",
+      "2": "0x6D8C8b928b8471DdA9340758afeFC451a7b21769"
+    },
+    "ERC721Template": {
+      "1": "0x9e1FaAbE8DA0c923c5dD8a5bE8AB472ba392446F"
+    },
+    "Dispenser": "0x456E1cc37B9B6a09281CAd95A5A819FAacFCcBdc",
+    "ERC721Factory": "0x36fEB81E51f41039Af37ED9FBc3123096C19814d"
+  }
+}

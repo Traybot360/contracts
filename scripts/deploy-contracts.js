@@ -79,6 +79,7 @@ async function main() {
       OceanTokenAddress = "0xe280d411BBbDAd50eE653D2Cc0aC610285BDB896";
       OPFOwner = "0x69475FFb6942BB3686321c1fd29Cd18e4A12200a";
       routerOwner = OPFOwner;
+      console.log("Network is rinkeby");
       sleepAmount = 2
       break;
     // case 0x89:
@@ -203,6 +204,7 @@ async function main() {
 
   if (shouldDeployOPFCommunityFeeCollector || !OPFCommunityFeeCollectorAddress) {
     if (logging) console.info("Deploying OPF Community Fee");
+    console.log({owner, OPFOwner, options});
     const OPFCommunityFeeCollector = await ethers.getContractFactory(
       "OPFCommunityFeeCollector",
       owner
@@ -212,6 +214,7 @@ async function main() {
       OPFOwner,
       options
     );
+    console.log("got collector connection");
     await opfcommunityfeecollector.deployTransaction.wait();
     addresses.OPFCommunityFeeCollector = opfcommunityfeecollector.address;
     if(show_verify){
