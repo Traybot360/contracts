@@ -55,101 +55,101 @@ async function main() {
   let additionalApprovedTokens=[]
   console.log("Using chain "+networkDetails.chainId);
   switch (networkDetails.chainId) {
-    case 1:
-      networkName = "mainnet";
-      productionNetwork = true;
-      OPFOwner = "0x0d27cd67c4A3fd3Eb9C7C757582f59089F058167";
-      routerOwner = OPFOwner;
-      OceanTokenAddress = "0x967da4048cD07aB37855c090aAF366e4ce1b9F48";
-      additionalApprovedTokens=["0x0642026E7f0B6cCaC5925b4E7Fa61384250e1701"];
-      gasPrice = ethers.utils.parseUnits('40', 'gwei')
-      sleepAmount = 30
-      break;
-    case 0x3:
-      networkName = "ropsten";
-      OceanTokenAddress = "0x5e8DCB2AfA23844bcc311B00Ad1A0C30025aADE9";
-      OPFOwner = '0x58F76AE5BC7Fe80D2fb2781d92189e6eE6Eb8F76';
-      routerOwner = OPFOwner;
-      gasLimit = 6000000;
-      gasPrice = ethers.utils.parseUnits('25', 'gwei')
-      sleepAmount = 1
-      break;
+    // case 1:
+    //   networkName = "mainnet";
+    //   productionNetwork = true;
+    //   OPFOwner = "0x0d27cd67c4A3fd3Eb9C7C757582f59089F058167";
+    //   routerOwner = OPFOwner;
+    //   OceanTokenAddress = "0x967da4048cD07aB37855c090aAF366e4ce1b9F48";
+    //   additionalApprovedTokens=["0x0642026E7f0B6cCaC5925b4E7Fa61384250e1701"];
+    //   gasPrice = ethers.utils.parseUnits('40', 'gwei')
+    //   sleepAmount = 30
+    //   break;
+    // case 0x3:
+    //   networkName = "ropsten";
+    //   OceanTokenAddress = "0x5e8DCB2AfA23844bcc311B00Ad1A0C30025aADE9";
+    //   OPFOwner = '0x58F76AE5BC7Fe80D2fb2781d92189e6eE6Eb8F76';
+    //   routerOwner = OPFOwner;
+    //   gasLimit = 6000000;
+    //   gasPrice = ethers.utils.parseUnits('25', 'gwei')
+    //   sleepAmount = 1
+    //   break;
     case 0x4:
       networkName = "rinkeby";
-      OceanTokenAddress = "0x8967bcf84170c91b0d24d4302c2376283b0b3a07";
-      OPFOwner = "0x0e901bC5D49636eC75B3B4fB88238698E5322dE6";
+      OceanTokenAddress = "0xe280d411BBbDAd50eE653D2Cc0aC610285BDB896";
+      OPFOwner = "0x69475FFb6942BB3686321c1fd29Cd18e4A12200a";
       routerOwner = OPFOwner;
       sleepAmount = 2
       break;
-    case 0x89:
-      networkName = "polygon";
-      productionNetwork = true;
-      OceanTokenAddress = "0x282d8efCe846A88B159800bd4130ad77443Fa1A1";
-      OPFOwner = "0x6272E00741C16b9A337E29DB672d51Af09eA87dD";
-      routerOwner = OPFOwner;
-      gasLimit = 19000000;
-      gasPrice = ethers.utils.parseUnits('120', 'gwei');
-      additionalApprovedTokens=["0xC5248Aa0629C0b2d6A02834a5f172937Ac83CBD3"];
-      break;
-    case 0x507:
-      networkName = "moonbase";
-      OPFOwner = '0xd8992Ed72C445c35Cb4A2be468568Ed1079357c8';
-      OceanTokenAddress = "0xF6410bf5d773C7a41ebFf972f38e7463FA242477";
-      routerOwner = OPFOwner;
-      sleepAmount = 10
-      break;
-    case 2021000:
-      networkName = "gaiaxtestnet";
-      OPFOwner = '0x2112Eb973af1DBf83a4f11eda82f7a7527D7Fde5'
-      routerOwner = OPFOwner;
-      OceanTokenAddress = "0x80E63f73cAc60c1662f27D2DFd2EA834acddBaa8";
-      break;
-    case 80001:
-      networkName = "mumbai";
-      OPFOwner = '0x06100AB868206861a4D7936166A91668c2Ce1312'
-      routerOwner = OPFOwner;
-      OceanTokenAddress = "0xd8992Ed72C445c35Cb4A2be468568Ed1079357c8";
-      gasLimit = 15000000
-      gasPrice = ethers.utils.parseUnits('45', 'gwei')
-      sleepAmount = 2
-      break;
-    case 0x38:
-      networkName = "bsc";
-      productionNetwork = true;
-      OPFOwner = '0x62012804e638A15a5beC5aDE01756A7C8d0E50Cc';
-      routerOwner = OPFOwner;
-      OceanTokenAddress = "0xdce07662ca8ebc241316a15b611c89711414dd1a";
-      gasPrice = ethers.utils.parseUnits('5', 'gwei')
-      sleepAmount = 5
-      break;
-    case 2021001:
-      networkName = "catenaxtestnet";
-      OPFOwner = '0x06100AB868206861a4D7936166A91668c2Ce1312'
-      OceanTokenAddress = "0xf26c6C93f9f1d725e149d95f8E7B2334a406aD10";
-      routerOwner = OPFOwner;
-      break;
-    case 0xf6:
-      networkName = "energyweb";
-      productionNetwork = true;
-      OceanTokenAddress = "0x593122aae80a6fc3183b2ac0c4ab3336debee528";
-      OPFOwner = "0xB98f46485e8b9206158D8127BAF81Dbfd6139Cef";
-      routerOwner = OPFOwner;
-      sleepAmount = 5;
-      break;
-    case 1285:
-      networkName = "moonriver";
-      productionNetwork = true;
-      OceanTokenAddress = "0x99C409E5f62E4bd2AC142f17caFb6810B8F0BAAE";
-      OPFOwner = "0x06100AB868206861a4D7936166A91668c2Ce1312"
-      routerOwner = OPFOwner;
-      break;
-    default:
-      OPFOwner = "0x7DF5273aD9A6fCce64D45c64c1E43cfb6F861725";
-      networkName = "development";
-      routerOwner = owner.address;
-      shouldDeployOceanMock = true;
-      sleepAmount = 0
-      break;
+    // case 0x89:
+    //   networkName = "polygon";
+    //   productionNetwork = true;
+    //   OceanTokenAddress = "0x282d8efCe846A88B159800bd4130ad77443Fa1A1";
+    //   OPFOwner = "0x6272E00741C16b9A337E29DB672d51Af09eA87dD";
+    //   routerOwner = OPFOwner;
+    //   gasLimit = 19000000;
+    //   gasPrice = ethers.utils.parseUnits('120', 'gwei');
+    //   additionalApprovedTokens=["0xC5248Aa0629C0b2d6A02834a5f172937Ac83CBD3"];
+    //   break;
+    // case 0x507:
+    //   networkName = "moonbase";
+    //   OPFOwner = '0xd8992Ed72C445c35Cb4A2be468568Ed1079357c8';
+    //   OceanTokenAddress = "0xF6410bf5d773C7a41ebFf972f38e7463FA242477";
+    //   routerOwner = OPFOwner;
+    //   sleepAmount = 10
+    //   break;
+    // case 2021000:
+    //   networkName = "gaiaxtestnet";
+    //   OPFOwner = '0x2112Eb973af1DBf83a4f11eda82f7a7527D7Fde5'
+    //   routerOwner = OPFOwner;
+    //   OceanTokenAddress = "0x80E63f73cAc60c1662f27D2DFd2EA834acddBaa8";
+    //   break;
+    // case 80001:
+    //   networkName = "mumbai";
+    //   OPFOwner = '0x06100AB868206861a4D7936166A91668c2Ce1312'
+    //   routerOwner = OPFOwner;
+    //   OceanTokenAddress = "0xd8992Ed72C445c35Cb4A2be468568Ed1079357c8";
+    //   gasLimit = 15000000
+    //   gasPrice = ethers.utils.parseUnits('45', 'gwei')
+    //   sleepAmount = 2
+    //   break;
+    // case 0x38:
+    //   networkName = "bsc";
+    //   productionNetwork = true;
+    //   OPFOwner = '0x62012804e638A15a5beC5aDE01756A7C8d0E50Cc';
+    //   routerOwner = OPFOwner;
+    //   OceanTokenAddress = "0xdce07662ca8ebc241316a15b611c89711414dd1a";
+    //   gasPrice = ethers.utils.parseUnits('5', 'gwei')
+    //   sleepAmount = 5
+    //   break;
+    // case 2021001:
+    //   networkName = "catenaxtestnet";
+    //   OPFOwner = '0x06100AB868206861a4D7936166A91668c2Ce1312'
+    //   OceanTokenAddress = "0xf26c6C93f9f1d725e149d95f8E7B2334a406aD10";
+    //   routerOwner = OPFOwner;
+    //   break;
+    // case 0xf6:
+    //   networkName = "energyweb";
+    //   productionNetwork = true;
+    //   OceanTokenAddress = "0x593122aae80a6fc3183b2ac0c4ab3336debee528";
+    //   OPFOwner = "0xB98f46485e8b9206158D8127BAF81Dbfd6139Cef";
+    //   routerOwner = OPFOwner;
+    //   sleepAmount = 5;
+    //   break;
+    // case 1285:
+    //   networkName = "moonriver";
+    //   productionNetwork = true;
+    //   OceanTokenAddress = "0x99C409E5f62E4bd2AC142f17caFb6810B8F0BAAE";
+    //   OPFOwner = "0x06100AB868206861a4D7936166A91668c2Ce1312"
+    //   routerOwner = OPFOwner;
+    //   break;
+    // default:
+    //   OPFOwner = "0x7DF5273aD9A6fCce64D45c64c1E43cfb6F861725";
+    //   networkName = "development";
+    //   routerOwner = owner.address;
+    //   shouldDeployOceanMock = true;
+    //   sleepAmount = 0
+    //   break;
   }
 
   if (!routerOwner || !OPFOwner) {
